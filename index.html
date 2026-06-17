@@ -140,9 +140,11 @@ hr.dash{border:none;border-top:1px dashed #ddd;margin:10px 0}
 .orders-empty{text-align:center;padding:60px 20px;color:#ccc;font-size:0.9rem}
 
 /* Print styles */
+@page{margin:0}
 @media print {
-  body > *:not(#printArea){display:none!important}
-  #printArea{display:block!important;position:fixed;inset:0;background:#fff;padding:20px;font-size:12pt}
+  body{display:block!important;overflow:visible!important;height:auto!important;background:#fff!important}
+  body > *{display:none!important}
+  #printArea{display:block!important;position:static!important;background:#fff;padding:16mm 12mm;font-size:12pt;width:100%}
   #printArea h2{text-align:center;font-size:14pt;margin-bottom:4px}
   .print-date{text-align:center;font-size:10pt;color:#666;margin-bottom:14px}
   .print-row{display:flex;justify-content:space-between;padding:3px 0;font-size:11pt;border-bottom:1px solid #eee}
