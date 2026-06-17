@@ -564,8 +564,8 @@ function printOrder(i){
 function deleteOrder(i){
   if(!confirm('確定刪除此訂單？'))return;
   const orders=JSON.parse(localStorage.getItem('posOrders')||'[]');
-  const updated=orders.filter(o=>o.id!==i);
-  localStorage.setItem('posOrders',JSON.stringify(updated));
+  orders.splice(i,1);
+  localStorage.setItem('posOrders',JSON.stringify(orders));
   renderOrders();
 }
 
