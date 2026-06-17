@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>石意 POS</title>
 <style>
-html{font-size:26pt}
+html{font-size:14pt}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-body{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif;background:#f0f2f5;color:#1a1a1a;height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+body{font-family:"Times New Roman","Microsoft JhengHei","微軟正黑體",sans-serif;background:#f0f2f5;color:#1a1a1a;height:100dvh;display:flex;flex-direction:column;overflow:hidden}
 
 .hdr{background:#2c6e49;color:#fff;padding:10px 12px;display:flex;align-items:center;gap:8px;flex-shrink:0}
 .hdr-back{background:rgba(255,255,255,0.2);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:0.95rem;cursor:pointer;display:none;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit}
@@ -385,8 +385,7 @@ function renderFlatProds(prods){
   prods.forEach(p=>{
     html+=`<div class="prod-group"><div class="pg-single" onclick="openQM(${jstr(p)})">
       <div class="ps-info">
-        <div class="ps-name">${p.name}</div>
-        ${p.spec?`<div class="ps-spec">${p.spec}</div>`:''}
+        <div class="ps-name">${p.spec||p.name}</div>
       </div>
       <div class="ps-price"><div class="amt">NT$${fmt(p.price)}</div><div class="unt">/${p.unit||'個'}</div></div>
       <button class="add-btn" onclick="event.stopPropagation();quickAdd(${jstr(p)})">+</button>
